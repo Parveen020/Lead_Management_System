@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 export const EmployeeContext = createContext();
 
 const EmployeeProvider = ({ children }) => {
-  const BASE_URL = "http://localhost:4000/employee";
+  const BASE_URL = "https://lead-management-system-backend-if9k.onrender.com/employee";
   const [employeeId, setEmployeeId] = useState(() => {
     return localStorage.getItem("employeeId") || "";
   });
