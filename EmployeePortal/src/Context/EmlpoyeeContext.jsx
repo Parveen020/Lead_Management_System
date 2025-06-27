@@ -406,12 +406,12 @@ const EmployeeProvider = ({ children }) => {
   };
 
  const autoUpdateStatus = async (employeeId) => {
-    try {
-      await axios.put(${BASE_URL}/lead-auto-update/${employeeId});
-    } catch (error) {
-      console.error("Auto status update failed:", error);
-    }
-  };
+  try {
+    await axios.put(`${BASE_URL}/lead-auto-update/${employeeId}`);
+  } catch (error) {
+    console.error("Auto status update failed:", error);
+  }
+};
 
   console.log("recent Activity - ", scheduledLeads);
 
