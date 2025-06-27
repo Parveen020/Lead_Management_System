@@ -5,7 +5,7 @@ import { useDropzone } from "react-dropzone";
 export const AdminContext = createContext(null);
 
 const AdminContextProvider = ({ children }) => {
-  const BASE_URL = "http://localhost:4000/admin";
+  const BASE_URL = "https://lead-management-system-backend-if9k.onrender.com/admin";
 
   const [adminDetails, setAdminDetails] = useState(() => {
     const stored = localStorage.getItem("adminDetails");
