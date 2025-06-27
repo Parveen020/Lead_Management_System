@@ -511,7 +511,7 @@ const autoUpdateLeadStatus = async (req, res) => {
       return res.status(404).json({ error: "Employee not found" });
     }
 
-    const now = new Date();
+    const nowIST = new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata" }));
 
     const leads = await LeadModel.find({
       _id: { $in: employee.assignedLeads },
@@ -524,10 +524,9 @@ const autoUpdateLeadStatus = async (req, res) => {
     const updatedLeads = [];
 
     for (const lead of leads) {
-      const lastCall =
-        lead.scheduledCalls[lead.scheduledCalls.length - 1]?.date;
+      const lastCall = lead.scheduledCalls[lead.scheduledCalls.length - 1]?.date;
 
-      if (lastCall && new Date(lastCall).getTime() < now.getTime()) {
+      if (lastCall && new Date(lastCall).getTime() < nowIST.getTime()) {
         lead.status = "Closed";
         lead.isScheduled = false;
         await lead.save();
