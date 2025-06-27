@@ -405,13 +405,52 @@ const EmployeeProvider = ({ children }) => {
     }
   };
 
-  const autoUpdateStatus = async (employeeId) => {
-    try {
-      await axios.put(`${BASE_URL}/lead-auto-update/${employeeId}`);
-    } catch (error) {
-      console.error("Auto status update failed:", error);
+  const autoUpdateLeadStatus = async (req, res) => {
+  try {
+    const { employeeId } = req.params;
+
+    const employee = await EmployeeModel.findOne({ employeeId });
+    if (!employee) {
+      return res.status(404).json({ error: "Employee not found" });
     }
-  };
+
+    const nowIST = new Date(
+      new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata" })
+    );
+
+    const leads = await LeadModel.find({
+      _id: { $in: employee.assignedLeads },
+      status: "Ongoing",
+      isScheduled: true,
+      scheduledCalls: { $exists: true, $not: { $size: 0 } },
+    });
+
+    let updatedCount = 0;
+    const updatedLeads = [];
+
+    for (const lead of leads) {
+      const lastCall =
+        lead.scheduledCalls[lead.scheduledCalls.length - 1]?.date;
+
+      if (lastCall && new Date(lastCall).getTime() < nowIST.getTime()) {
+        lead.status = "Closed";
+        lead.isScheduled = false;
+        await lead.save();
+        updatedLeads.push(lead._id);
+        updatedCount++;
+      }
+    }
+
+    return res.status(200).json({
+      message: `Auto-close complete. ${updatedCount} lead(s) closed for employee.`,
+      updatedCount,
+      updatedLeads,
+    });
+  } catch (error) {
+    console.error("Auto update error:", error);
+    res.status(500).json({ error: "Failed to auto-update lead statuses" });
+  }
+};
 
   console.log("recent Activity - ", scheduledLeads);
 
