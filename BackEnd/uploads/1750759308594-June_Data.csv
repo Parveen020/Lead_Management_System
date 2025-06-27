@@ -1,0 +1,11 @@
+name,email,phoneNumber,type,leadSource,location,language,recivedDate
+Amit Sharma,amit.sharma@example.com,9876543210,Hot,Website,Pune,Hindi,2025-06-20
+Sneha Roy,sneha.roy@example.com,9123456780,Cold,Email,Hyderabad,English,2025-06-19
+Rahul Verma,rahul.verma@example.com,9988776655,Hot,Referral,Delhi,Bengali,2025-06-18
+Divya Iyer,divya.iyer@example.com,9765432109,Warm,Website,Pune,Tamil,2025-06-21
+Karan Singh,karan.singh@example.com,9876501234,Cold,Event,Delhi,Hindi,2025-06-22
+Megha Nair,megha.nair@example.com,9012345678,Warm,LinkedIn,Hyderabad,English,2025-06-17
+Ravi Kumar,ravi.kumar@example.com,9345612870,Hot,Adwords,Pune,Hindi,2025-06-23
+Anjali Das,anjali.das@example.com,9876123450,Warm,Website,Delhi,Bengali,2025-06-16
+Pradeep Reddy,pradeep.reddy@example.com,9001122233,Cold,Referral,Hyderabad,Tamil,2025-06-15
+Nisha Kapoor,nisha.kapoor@example.com,9898123412,Hot,Email,Pune,English,2025-06-14
