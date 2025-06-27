@@ -1,0 +1,290 @@
+.employee-container {
+    width: 100%;
+    padding: 24px 30px;
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+}
+
+.leads-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.breadcrumb {
+    color: #555;
+    font-size: 14px;
+}
+
+.add-employee-button {
+    width: 170px;
+    height: 40px;
+    background-color: #e2e2e2;
+    border: none;
+    color: #6c6c6c;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.add-employee-button:hover {
+    background-color: #ccc;
+}
+
+.team-table-2 {
+    height: 500px;
+    border: 1px solid #b2b2b2;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.table-scroll-2 {
+    height: 100%;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.table-scroll-2 table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-scroll-2 thead th {
+    cursor: pointer;
+    position: sticky;
+    top: 0;
+    background: #f9f9f9;
+    z-index: 1;
+}
+
+.table-scroll-2 th {
+    font-size: 15px;
+    font-weight: 500;
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.table-scroll-2 td {
+    font-size: 15px;
+    font-weight: 400;
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.table-scroll-2 .row {
+    text-align: center;
+}
+
+.checkbox {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.employee-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.initials-circle {
+    width: 40px;
+    height: 40px;
+    background-color: #fff2EA;
+    color: #93312B;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.employee-info {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.employee-info span {
+    font-size: 14px;
+    color: #929292;
+}
+
+/* Pagination styles */
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.pagination-button {
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    background-color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.pagination-button.active {
+    background-color: #e2e2e2;
+    font-weight: 500;
+}
+
+.pagination-button:hover:not(.active) {
+    background-color: #f5f5f5;
+}
+
+.pagination-ellipsis {
+    padding: 6px 12px;
+}
+
+/* Modal styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal {
+    background-color: white;
+    border-radius: 8px;
+    width: 500px;
+    max-width: 90%;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.modal-header h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #555;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-note {
+    margin: 20px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.save-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #e2e2e2;
+    border: none;
+    border-radius: 8px;
+    color: #6c6c6c;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.save-button:hover {
+    background-color: #d5d5d5;
+}
+
+.status {
+    font-size: 14px;
+}
+
+.status.active {
+    color: green;
+    border-radius: 5px;
+    background-color: rgb(205, 238, 205);
+}
+
+.status.inactive {
+    color: rgb(234, 53, 53);
+    border-radius: 5px;
+    background-color: rgb(216, 184, 184);
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.row-menu {
+    position: absolute;
+    /* top: 10px; */
+    right: 30px;
+    background-color: white;
+    box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    padding: 8px 0;
+    z-index: 100;
+    width: 100px;
+}
+
+.row-menu button {
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    width: 100%;
+    padding: 8px 12px;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 14px;
+    gap: 0px;
+}
+
+
+
+.row-menu button:hover {
+    background-color: #f0f0f0;
+}
