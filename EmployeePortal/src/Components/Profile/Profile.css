@@ -1,0 +1,55 @@
+.profile {
+    width: 100%;
+    height: 90%;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+}
+
+.profile-form {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #757575;
+}
+
+.form-group input {
+    padding: 12px;
+    border: 1px solid #484747;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+}
+
+.save-button {
+    width: 40%;
+    background-color: #245bff;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s ease;
+}
+
+.save-button:hover {
+    background-color: #1a46cc;
+}

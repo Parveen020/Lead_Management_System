@@ -1,0 +1,54 @@
+.header {
+    width: 100%;
+    height: 140px;
+    font-size: 23px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    background-color: #245bff;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 5px 20px;
+}
+
+.logo span {
+    color: #E8E000;
+}
+
+.lower-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.lower-box .wishes {
+    font-size: 15px;
+    font-weight: 400;
+    color: #e6e6e6;
+}
+
+.back-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-top: 10px;
+}
+
+.back-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+}
+
+.tab-title {
+    font-size: 22px;
+    font-weight: 500;
+}

@@ -1,0 +1,125 @@
+.dashboard {
+    font-family: 'Segoe UI', sans-serif;
+    width: 100%;
+    height: auto;
+}
+
+.timings {
+    padding: 15px;
+    margin-bottom: 0px;
+}
+
+.timings h3 {
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.time-card {
+    background-color: #E4E8F2;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    padding: 10px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+.active-tab {
+    background-color: #2051E5;
+    color: white;
+}
+
+.card-header>div {
+    text-align: center;
+    font-weight: 500;
+}
+
+.card-header span {
+    font-weight: 400;
+}
+
+.toggle {
+    width: 20px;
+    height: 40px;
+    border-radius: 12px;
+    background-color: #ccc;
+    border: 2px solid white;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.toggle.initial {
+    background-color: #ccc;
+}
+
+.toggle.on {
+    background-color: limegreen;
+}
+
+.toggle.off {
+    background-color: red;
+}
+
+.break-history {
+    min-height: 180px;
+    max-height: 180px;
+    overflow-y: auto;
+    padding-right: 4px;
+    scrollbar-width: none;
+}
+
+.break-history::-webkit-scrollbar {
+    width: 4px;
+}
+
+.break-history::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
+}
+
+.break-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-top: 1px solid #eee;
+    font-size: 14px;
+}
+
+.activity {
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
+
+.activity h3 {
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.activity-box {
+    min-height: 145px;
+    max-height: 145px;
+    overflow-y: auto;
+    background-color: #E4E8F2;
+    padding: 10px;
+    border-radius: 12px;
+    scrollbar-width: none;
+}
+
+.activity-box::-webkit-scrollbar {
+    width: 4px;
+}
+
+.activity-box::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
+}
+
+.activity-box p {
+    margin: 5px 0;
+}
