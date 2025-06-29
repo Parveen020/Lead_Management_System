@@ -475,7 +475,9 @@ const updateActivity = async (req, res) => {
     const { action, meta } = req.body;
     const { employeeId } = req.params;
 
-    if (!action) return res.status(400).json({ error: "Action is required" });
+    if (!action) {
+      return res.status(400).json({ error: "Action is required" });
+    }
 
     const employee = await EmployeeModel.findOneAndUpdate(
       { employeeId },
@@ -491,13 +493,35 @@ const updateActivity = async (req, res) => {
       { new: true }
     );
 
-    if (!employee) return res.status(404).json({ error: "Employee not found" });
+    if (!employee) {
+      return res.status(404).json({ error: "Employee not found" });
+    }
+
+    if (action === "Closed Lead") {
+      const admin = await AdminModel.findOne();
+
+      if (admin) {
+        await AdminModel.findByIdAndUpdate(
+          { _id: admin._id },
+          {
+            $push: {
+              recentActivities: {
+                action: "Closed Lead",
+                meta: `${employee.fistrName + " " + employee.lastName} closed lead - just now`,
+                timestamp: new Date(),
+              },
+            },
+          }
+        );
+      }
+    }
 
     res.status(200).json({
       message: "Activity logged",
       activities: employee.recentActivities,
     });
   } catch (error) {
+    console.error("Activity log error:", error);
     res.status(500).json({ error: "Failed to log activity" });
   }
 };
