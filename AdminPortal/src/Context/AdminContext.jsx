@@ -154,7 +154,7 @@ const AdminContextProvider = ({ children }) => {
   const handleUpload = async () => {
     if (!uploadedFile) return;
     const adminDetails = JSON.parse(localStorage.getItem("adminDetails"));
-    const adminId = adminDetails?._id;
+    const adminId = adminDetails[0]?._id;
     const formData = new FormData();
     formData.append("file", uploadedFile);
 
